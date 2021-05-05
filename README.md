@@ -10,5 +10,4 @@ Once the tool is connected to a device via USB, a Virtual Net, will be created. 
 When you are connected to the wifi, you will not have internet access, but if you search on the web browser the following address: [```https://172.0.24.1```](https://172.0.24.1), you will access the web interface of the THC cracktool.
 
 
-
-Roses are \textcolor{red}{red}, violets are \textcolor{blue}{blue}.
+<p>Some Markdown text with <span style="color:blue">some <em>blue</em> text</span>.</p>
