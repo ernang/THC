@@ -12,4 +12,4 @@ In order to connect to your Terrible Hackiemos Crackt00l, you will need to follo
 
     2. If you want to access via the same computer where the tool is conected, just search on the browser the following address: [```https://172.16.0.1```](https://172.16.0.1)
 
-    1. When you are connected to the wifi, you will not have internet access, but if you search on the web browser the following address: [```https://172.24.0.1```](https://172.24.0.1), you will access the web interface of the THC cracktool.
+    1. When you are connected to the wifi, you will not have internet access, but if you search on the web browser the following address: [```https://172.24.0.1```](https://172.24.0.1) , you will access the web interface of the THC cracktool.
