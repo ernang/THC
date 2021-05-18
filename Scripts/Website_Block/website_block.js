@@ -37,11 +37,6 @@ delay(100)
 type("C:/windows/System32/wscript.exe invisible.vbs TheRealAnnoyance.bat")
 press("ENTER")
 delay(400)
-// Aprizm's code for youtube roller begins here. I changed the link to a ctrl-v so that the ducky pastes the contents of WebsiteLink.txt hence the above line of code: 'type "WebsiteLink.txt" | clip'
-// Title: Youtube Roller
-// Author: Aprizm
-// Description: This scripts opens a youtube video in fullscreen and puts the browser in fullscreen
-// Option : if you change the link of the video dont forget to change the watch with watch_popup to have it fullscreen also add &loop=1 at the end to make it loop forever
 delay(200)
 press("GUI r")
 delay(200)
