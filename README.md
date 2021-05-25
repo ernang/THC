@@ -1,4 +1,5 @@
 # THC
+[img](./img/logo.png)
 ## Terrible Hackiemos Crackt00l
 This is the official github repository for the THC, a pentesting tool created by Eur1p3des and Rsae.
 ### What is this tool?
@@ -17,4 +18,4 @@ In order to connect to your Terrible Hackiemos Crackt00l, you will need to follo
 3. The previous links will take you to the Main site, not the tool configuration site. if you want to access directly to the THC config site, we recommend you to use the following links:
 
     1. To access directly from the computer where THC is connected: [```http://172.16.0.1:8000```](http://172.16.0.1:8000) .
-    2. To access via wifi: [```http://172.24.0.1:8000```](http://172.24.0.1:8000) . 
+    2. To access via wifi: [```http://172.24.0.1:8000```](http://172.24.0.1:8000) .
