@@ -1,7 +1,7 @@
 # THC
 ![](./img/logo4.png)
 ## Terrible Hackiemos Crackt00l
-This is the official github repository for the THC, a pentesting tool created by Ernest Anguera e Isaac León.
+This is the official github repository for the THC, a pentesting tool created by Ernest Anguera and Isaac León.
 ### What is this tool?
 THC is a cracking station which allows its users to find vulnerabilities inside a system in order to make that device safer by knowing its weaknesses.\
 Under no circumstance it is designed to make a profit.
